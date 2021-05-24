@@ -6,7 +6,7 @@ import * as React from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { WalletAddIcon, BatColorIcon } from 'brave-ui/components/icons'
-import { WalletWrapper, WalletSummary, WalletSummarySlider, WalletPanel } from '../../../ui/components'
+import { AdaptiveCaptcha, WalletWrapper, WalletSummary, WalletSummarySlider, WalletPanel } from '../../../ui/components'
 import { Provider } from '../../../ui/components/profile'
 import { NotificationType } from '../../../ui/components/walletWrapper'
 import { RewardsNotificationType } from '../constants/rewards_panel_types'
@@ -33,6 +33,7 @@ interface State {
   refreshingPublisher: boolean
   publisherRefreshed: boolean
   timerPassed: boolean
+  showScheduledCaptcha: boolean
 }
 
 export class Panel extends React.Component<Props, State> {
@@ -47,7 +48,8 @@ export class Panel extends React.Component<Props, State> {
       publisherKey: null,
       refreshingPublisher: false,
       publisherRefreshed: false,
-      timerPassed: false
+      timerPassed: false,
+      showScheduledCaptcha: false
     }
   }
 
@@ -93,9 +95,22 @@ export class Panel extends React.Component<Props, State> {
         !this.props.rewardsPanelData.initializing) {
       this.startRewards()
     }
+
+    if (!prevProps.rewardsPanelData.scheduledCaptcha.url &&
+        this.props.rewardsPanelData.scheduledCaptcha.url) {
+      this.setState({ showScheduledCaptcha: true })
+    }
+  }
+
+  getScheduledCaptchaInfo = () => {
+    chrome.braveRewards.getScheduledCaptchaInfo((result: boolean, scheduledCaptcha: RewardsExtension.ScheduledCaptcha) => {
+      this.props.actions.onGetScheduledCaptchaInfo(result, scheduledCaptcha)
+    })
   }
 
   startRewards () {
+    this.getScheduledCaptchaInfo()
+
     chrome.braveRewards.getACEnabled((enabled: boolean) => {
       this.props.actions.onEnabledAC(enabled)
     })
@@ -814,7 +829,27 @@ export class Panel extends React.Component<Props, State> {
     )
   }
 
-  render () {
+  onCaptchaAttempt = (result: boolean) => {
+    chrome.braveRewards.updateScheduledCaptchaResult(result)
+    this.getScheduledCaptchaInfo()
+  }
+
+  onCaptchaDismissed = () => {
+    this.setState({ showScheduledCaptcha: false })
+  }
+
+  getScheduledCaptcha = (scheduledCaptcha: RewardsExtension.ScheduledCaptcha) => {
+    return (
+      <AdaptiveCaptcha
+        url={scheduledCaptcha.url}
+        maxAttemptsExceeded={scheduledCaptcha.maxAttemptsExceeded}
+        onCaptchaAttempt={this.onCaptchaAttempt}
+        onCaptchaDismissed={this.onCaptchaDismissed}
+      />
+    )
+  }
+
+  getWalletWrapper = () => {
     const { pendingContributionTotal, enabledAC, externalWallet, balance, parameters } = this.props.rewardsPanelData
     const publisher: RewardsExtension.Publisher | undefined = this.getPublisher()
     const total = balance.total || 0
@@ -907,6 +942,15 @@ export class Panel extends React.Component<Props, State> {
         {this.showOnboarding()}
       </WalletWrapper>
     )
+  }
+
+  render () {
+    if (this.state.showScheduledCaptcha) {
+      const { scheduledCaptcha } = this.props.rewardsPanelData
+      return this.getScheduledCaptcha(scheduledCaptcha)
+    } else {
+      return this.getWalletWrapper()
+    }
   }
 }
 

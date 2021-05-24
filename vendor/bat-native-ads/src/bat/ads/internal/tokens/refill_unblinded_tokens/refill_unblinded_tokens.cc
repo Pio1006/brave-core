@@ -107,7 +107,33 @@ void RefillUnblindedTokens::Refill() {
 
   nonce_ = "";
 
-  RequestSignedTokens();
+  InitiateRequestSignedTokens();
+}
+
+void RefillUnblindedTokens::InitiateRequestSignedTokens() {
+  BLOG(1, "InitiateRequestSignedTokens");
+
+  auto captcha_callback =
+      std::bind(&RefillUnblindedTokens::OnGetScheduledCaptcha, this,
+                std::placeholders::_1);
+  AdsClientHelper::Get()->GetScheduledCaptcha(wallet_.id,
+                                              std::move(captcha_callback));
+}
+
+void RefillUnblindedTokens::OnGetScheduledCaptcha(
+    const std::string& captcha_id) {
+  BLOG(1, "OnGetScheduledCaptcha");
+
+  if (captcha_id.empty()) {
+    RequestSignedTokens();
+    return;
+  }
+
+  BLOG(1,
+       "User must solve scheduled captcha before refilling unblinded tokens");
+  if (delegate_) {
+    delegate_->OnCaptchaRequiredToRefillUnblindedTokens(captcha_id);
+  }
 }
 
 void RefillUnblindedTokens::RequestSignedTokens() {
@@ -349,7 +375,7 @@ void RefillUnblindedTokens::OnRetry() {
   }
 
   if (nonce_.empty()) {
-    RequestSignedTokens();
+    InitiateRequestSignedTokens();
   } else {
     GetSignedTokens();
   }
