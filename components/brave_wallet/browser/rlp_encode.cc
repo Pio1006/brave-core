@@ -50,11 +50,7 @@ base::Value RLPUint256ToBlobValue(uint256_t input) {
 
 std::string RLPEncode(base::Value val) {
   if (val.is_int()) {
-    int i = 0;
-    bool is_integer = val.is_int();
-    if (is_integer)
-      i = val.GetInt();
-    DCHECK(is_integer);
+    int i = val.GetInt();
     return RLPEncode(base::Value(RLPUint256ToBlobValue((uint256_t)i)));
   } else if (val.is_blob()) {
     base::Value::BlobStorage blob = val.GetBlob();
