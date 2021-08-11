@@ -136,10 +136,10 @@ content_settings::SessionModel GetSessionModelFromDictionary(
     const base::DictionaryValue* dictionary,
     const char* key) {
   absl::optional<int> model_int = dictionary->FindIntKey(key);
-  if (model_int.has_value() &&
-      ((model_int >
-        static_cast<int>(content_settings::SessionModel::kMaxValue)) ||
-       (model_int < 0))) {
+  if (!model_int.has_value() ||
+      (model_int >
+       static_cast<int>(content_settings::SessionModel::kMaxValue)) ||
+      (model_int < 0)) {
     model_int = 0;
   }
 
