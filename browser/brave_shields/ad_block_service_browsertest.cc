@@ -703,6 +703,7 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, SubscribeToCustomSubscription) {
 
   // Wait for the subscription to be updated for the first time
   sub_observer.Wait();
+  WaitForAdBlockServiceThreads();
 
   // Ensure that the status of the subscription has been updated accordingly
   base::Time first_update;
@@ -722,7 +723,7 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, SubscribeToCustomSubscription) {
   ui_test_utils::NavigateToURL(browser(), tab_url);
   content::WebContents* contents =
       browser()->tab_strip_model()->GetActiveWebContents();
-  ASSERT_EQ(true,
+  EXPECT_EQ(true,
             EvalJs(contents, base::StringPrintf("setExpectations(0, 0, 0, 1);"
                                                 "xhr('%s')",
                                                 resource_url.spec().c_str())));
@@ -740,7 +741,7 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, SubscribeToCustomSubscription) {
     ASSERT_EQ(subscriptions[0].enabled, false);
   }
 
-  ASSERT_EQ(true,
+  EXPECT_EQ(true,
             EvalJs(contents, base::StringPrintf("setExpectations(0, 0, 1, 1);"
                                                 "xhr('%s')",
                                                 resource_url.spec().c_str())));
@@ -800,7 +801,6 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, SubscribeTo404List) {
   }
 
   // Wait for the subscription to be updated for the first time
-  LOG(ERROR) << "Waiting for subscription update";
   sub_observer.Wait();
 
   // Ensure that the status of the subscription has been updated accordingly
