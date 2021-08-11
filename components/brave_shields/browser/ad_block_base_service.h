@@ -11,6 +11,7 @@
 #include <memory>
 #include <string>
 #include <utility>
+#include <set>
 #include <vector>
 
 #include "base/files/file_path.h"
@@ -84,7 +85,7 @@ class AdBlockBaseService : public BaseBraveShieldsService {
                         GetDATFileDataResult result);
   void OnPreferenceChanges(const std::string& pref_name);
 
-  std::vector<std::string> tags_;
+  std::set<std::string> tags_;
   std::string resources_;
   base::WeakPtrFactory<AdBlockBaseService> weak_factory_;
   DISALLOW_COPY_AND_ASSIGN(AdBlockBaseService);
