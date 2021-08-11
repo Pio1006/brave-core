@@ -141,11 +141,6 @@ interface WalletHandler {
                       array<AppItem> favoriteApps,
                       bool isWalletBackedUp,
                       array<AccountInfo> accountInfos);
-
-  GetTokenByContract(string contract) => (ERCToken? token);
-  GetTokenBySymbol(string symbol) => (ERCToken? token);
-  GetAllTokens() => (array<ERCToken> tokens);
-
   AddFavoriteApp(AppItem appItem);
   RemoveFavoriteApp(AppItem appItem);
 };

@@ -29,9 +29,6 @@ class ERCTokenRegistry : public mojom::ERCTokenRegistry {
   mojo::PendingRemote<mojom::ERCTokenRegistry> MakeRemote();
   bool ParseERCTokens(const std::string& token_list);
   void UpdateTokenList(std::vector<mojom::ERCTokenPtr> erc_tokens);
-  mojom::ERCTokenPtr GetTokenByContract(const std::string& contract);
-  mojom::ERCTokenPtr GetTokenBySymbol(const std::string& symbol);
-  std::vector<mojom::ERCTokenPtr> GetAllTokens();
 
   // ERCTokenRegistry interface methods
   void GetTokenByContract(const std::string& contract,
