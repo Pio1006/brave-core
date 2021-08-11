@@ -272,6 +272,10 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest,
 // filters.
 IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, AdsGetBlockedByCustomBlocker) {
   EXPECT_EQ(browser()->profile()->GetPrefs()->GetUint64(kAdsBlocked), 0ULL);
+
+  ASSERT_TRUE(InstallDefaultAdBlockExtension());
+  UpdateAdBlockInstanceWithRules("");
+
   ASSERT_TRUE(g_brave_browser_process->ad_block_custom_filters_service()
                   ->UpdateCustomFilters("*ad_banner.png"));
 
@@ -280,7 +284,7 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, AdsGetBlockedByCustomBlocker) {
   content::WebContents* contents =
       browser()->tab_strip_model()->GetActiveWebContents();
 
-  ASSERT_EQ(true, EvalJs(contents,
+  EXPECT_EQ(true, EvalJs(contents,
                          "setExpectations(0, 1, 0, 0);"
                          "addImage('ad_banner.png')"));
   EXPECT_EQ(browser()->profile()->GetPrefs()->GetUint64(kAdsBlocked), 1ULL);
@@ -290,6 +294,10 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, AdsGetBlockedByCustomBlocker) {
 // the custom filters, and make sure it is not blocked.
 IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, DefaultBlockCustomException) {
   EXPECT_EQ(browser()->profile()->GetPrefs()->GetUint64(kAdsBlocked), 0ULL);
+
+  ASSERT_TRUE(InstallDefaultAdBlockExtension());
+  UpdateAdBlockInstanceWithRules("");
+
   UpdateAdBlockInstanceWithRules("*ad_banner.png");
   ASSERT_TRUE(g_brave_browser_process->ad_block_custom_filters_service()
                   ->UpdateCustomFilters("@@ad_banner.png"));
@@ -299,7 +307,7 @@ IN_PROC_BROWSER_TEST_F(AdBlockServiceTest, DefaultBlockCustomException) {
   content::WebContents* contents =
       browser()->tab_strip_model()->GetActiveWebContents();
 
-  ASSERT_EQ(true, EvalJs(contents,
+  EXPECT_EQ(true, EvalJs(contents,
                          "setExpectations(1, 0, 0, 0);"
                          "addImage('ad_banner.png')"));
   EXPECT_EQ(browser()->profile()->GetPrefs()->GetUint64(kAdsBlocked), 0ULL);
