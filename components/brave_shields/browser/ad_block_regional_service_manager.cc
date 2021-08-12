@@ -126,7 +126,6 @@ void AdBlockRegionalServiceManager::ShouldStartRequest(
   if (!IsInitialized())
     return;
 
-
   base::AutoLock lock(regional_services_lock_);
 
   for (const auto& regional_service : regional_services_) {
