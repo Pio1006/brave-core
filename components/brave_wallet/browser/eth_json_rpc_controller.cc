@@ -92,13 +92,6 @@ void EthJsonRpcController::AddObserver(
 void EthJsonRpcController::Request(const std::string& json_payload,
                                    bool auto_retry_on_network_change,
                                    RequestCallback callback) {
-  std::string method = brave_wallet::ParseRequestMethodName(json_payload);
-  if (method == "wallet_addEthereumChain") {
-    AddEthereumChainParameter result;
-    if (ParseAddEthereumChainParameter(json_payload, &result)) {
-      DLOG(INFO) << "ParseAddEthereumChainParameter";
-    }
-  }
   api_request_helper_.Request("POST", network_url_, json_payload,
                               "application/json", auto_retry_on_network_change,
                               std::move(callback));

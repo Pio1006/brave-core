@@ -9,6 +9,11 @@
 
 #include "brave/components/brave_wallet/browser/brave_wallet_provider_delegate.h"
 #include "brave/components/brave_wallet/browser/eth_json_rpc_controller.h"
+#include "brave/components/brave_wallet/browser/eth_response_parser.h"
+
+namespace {
+const char kAddEthereumChainMethod[] = "wallet_addEthereumChain";
+}  // namespace
 
 namespace brave_wallet {
 
@@ -26,9 +31,25 @@ BraveWalletProviderImpl::BraveWalletProviderImpl(
 BraveWalletProviderImpl::~BraveWalletProviderImpl() {
 }
 
+bool BraveWalletProviderImpl::OnAddEthereumChainRequest(
+    const std::string& json_payload, RequestCallback callback) {
+  AddEthereumChainParameter result;
+  if (!ParseAddEthereumChainParameter(json_payload, &result))
+    return false;
+  delegate_->RequestEthereumPermissions(
+      base::BindOnce(&BraveWalletProviderImpl::OnChainAddedResult,
+                    weak_factory_.GetWeakPtr(), std::move(callback)));
+  return true;
+}
+
 void BraveWalletProviderImpl::Request(const std::string& json_payload,
                                       bool auto_retry_on_network_change,
                                       RequestCallback callback) {
+  std::string method = brave_wallet::ParseRequestMethodName(json_payload);
+  if (method == kAddEthereumChainMethod &&
+      OnAddEthereumChainRequest(json_payload, std::move(callback))) {
+    return;
+  }
   if (rpc_controller_) {
     rpc_controller_->Request(json_payload, true, std::move(callback));
   }
@@ -41,6 +62,12 @@ void BraveWalletProviderImpl::Enable(EnableCallback callback) {
   delegate_->RequestEthereumPermissions(
       base::BindOnce(&BraveWalletProviderImpl::OnEnable,
                      weak_factory_.GetWeakPtr(), std::move(callback)));
+}
+
+void BraveWalletProviderImpl::OnChainAddedResult(
+    EnableCallback callback,
+    const std::vector<std::string>& accounts) {
+  std::move(callback).Run(accounts);
 }
 
 void BraveWalletProviderImpl::OnEnable(
