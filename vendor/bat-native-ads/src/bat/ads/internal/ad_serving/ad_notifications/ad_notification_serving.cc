@@ -19,6 +19,7 @@
 #include "bat/ads/internal/bundle/creative_ad_notification_info.h"
 #include "bat/ads/internal/client/client.h"
 #include "bat/ads/internal/eligible_ads/ad_notifications/eligible_ad_notifications.h"
+#include "bat/ads/internal/features/ad_serving/ad_serving_features.h"
 #include "bat/ads/internal/logging.h"
 #include "bat/ads/internal/p2a/p2a_ad_opportunities/p2a_ad_opportunity.h"
 #include "bat/ads/internal/platform/platform_helper.h"
@@ -106,6 +107,17 @@ void AdServing::MaybeServeAd() {
     return;
   }
 
+  int ad_serving_version = features::GetAdServingVersion();
+  BLOG(1, "Ad serving version " << ad_serving_version);
+  if (ad_serving_version == 2) {
+    MaybeServeAdV2();
+    return;
+  }
+
+  MaybeServeAdV1();
+}
+
+void AdServing::MaybeServeAdV1() {
   const SegmentList segments = ad_targeting_->GetSegments();
 
   DCHECK(eligible_ads_);
@@ -136,6 +148,36 @@ void AdServing::MaybeServeAd() {
 
         BLOG(1, "Served ad notification");
         ServedAd(ad);
+      });
+}
+
+void AdServing::MaybeServeAdV2() {
+  const SegmentList interest_segments = ad_targeting_->GetInterestSegments();
+  const SegmentList intent_segments = ad_targeting_->GetIntentSegments();
+
+  eligible_ads_->GetForFeatures(
+      interest_segments, intent_segments,
+      [=](const bool was_allowed,
+          absl::optional<CreativeAdNotificationInfo> ad) {
+        if (was_allowed) {
+          p2a::RecordAdOpportunityForSegments(AdType::kAdNotification,
+                                              interest_segments);
+        }
+
+        if (!ad) {
+          BLOG(1, "Ad notification not served: No eligible ads found");
+          FailedToServeAd();
+          return;
+        }
+
+        if (!ServeAd(ad.value())) {
+          BLOG(1, "Failed to serve ad notification");
+          FailedToServeAd();
+          return;
+        }
+
+        BLOG(1, "Served ad notification");
+        ServedAd(ad.value());
       });
 }
 
