@@ -31,6 +31,7 @@
 #include "brave/components/brave_sync/buildflags/buildflags.h"
 #include "brave/components/brave_sync/network_time_helper.h"
 #include "brave/components/debounce/browser/debounce_component_installer.h"
+#include "brave/components/debounce/common/features.h"
 #include "brave/components/ntp_background_images/browser/features.h"
 #include "brave/components/ntp_background_images/browser/ntp_background_images_service.h"
 #include "brave/components/p3a/brave_p3a_service.h"
@@ -264,6 +265,8 @@ BraveBrowserProcessImpl::greaselion_download_service() {
 
 debounce::DebounceComponentInstaller*
 BraveBrowserProcessImpl::debounce_component_installer() {
+  if (!base::FeatureList::IsEnabled(debounce::features::kBraveDebounce))
+    return nullptr;
   if (!debounce_component_installer_) {
     debounce_component_installer_ =
         std::make_unique<debounce::DebounceComponentInstaller>(
@@ -418,8 +421,7 @@ brave_ads::ResourceComponent* BraveBrowserProcessImpl::resource_component() {
 #endif  // BUILDFLAG(BRAVE_ADS_ENABLED)
 
 #if BUILDFLAG(ENABLE_IPFS)
-ipfs::BraveIpfsClientUpdater*
-BraveBrowserProcessImpl::ipfs_client_updater() {
+ipfs::BraveIpfsClientUpdater* BraveBrowserProcessImpl::ipfs_client_updater() {
   if (ipfs_client_updater_)
     return ipfs_client_updater_.get();
 
