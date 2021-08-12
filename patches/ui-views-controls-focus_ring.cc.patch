@@ -1,8 +1,8 @@
 diff --git a/ui/views/controls/focus_ring.cc b/ui/views/controls/focus_ring.cc
-index 4e684c2533128f5c6478fc183932057e85c75aec..6dc36e8975d1df78ec2a6d8d37171aedb47693f7 100644
+index 7eb9d404f2f093d4a7ee49740cbfe223f9e80678..3f7138ac2325568ab662b2cfcf90d8e298a947ba 100644
 --- a/ui/views/controls/focus_ring.cc
 +++ b/ui/views/controls/focus_ring.cc
-@@ -215,6 +215,7 @@ void FocusRing::OnPaint(gfx::Canvas* canvas) {
+@@ -230,6 +230,7 @@ void FocusRing::OnPaint(gfx::Canvas* canvas) {
    }
  
    paint.setColor(color_.value_or(GetColor(this, !invalid_)));
