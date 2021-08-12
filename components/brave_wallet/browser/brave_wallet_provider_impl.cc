@@ -36,6 +36,9 @@ bool BraveWalletProviderImpl::OnAddEthereumChainRequest(
   AddEthereumChainParameter result;
   if (!ParseAddEthereumChainParameter(json_payload, &result))
     return false;
+  if (!delegate_)
+    return false;
+
   delegate_->RequestEthereumPermissions(
       base::BindOnce(&BraveWalletProviderImpl::OnChainAddedResult,
                     weak_factory_.GetWeakPtr(), std::move(callback)));
@@ -45,6 +48,7 @@ bool BraveWalletProviderImpl::OnAddEthereumChainRequest(
 void BraveWalletProviderImpl::Request(const std::string& json_payload,
                                       bool auto_retry_on_network_change,
                                       RequestCallback callback) {
+  DLOG(INFO) << "json_payload:" << json_payload;
   std::string method = brave_wallet::ParseRequestMethodName(json_payload);
   if (method == kAddEthereumChainMethod &&
       OnAddEthereumChainRequest(json_payload, std::move(callback))) {
