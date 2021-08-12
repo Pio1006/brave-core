@@ -107,7 +107,7 @@ void BraveWalletProviderDelegateImpl::GetAllowedAccounts(
             rfh, addresses,
             base::BindOnce(&OnGetAllowedAccounts, std::move(callback)));
       },
-      content::RenderFrameHost::FromID(routing_id_), std::move(callback)));
+      content::RenderFrameHost::FromID(host_id_), std::move(callback)));
 }
 
 }  // namespace brave_wallet
