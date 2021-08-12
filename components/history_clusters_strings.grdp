@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <!-- Strings for the chrome://history/journeys page -->
+
 <!-- TODO(crbug.com/1173908): Add strings currently hardcoded in HistoryUI. -->
-<!--This file is created by l10nUtil.js. Do not edit manually.-->
 <grit-part>
 </grit-part>

@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--This file is created by l10nUtil.js. Do not edit manually.-->
+<?xml version="1.0" encoding="utf-8"?>
 <grit-part>
   <!-- Security summary strings -->
   <message name="IDS_PAGE_INFO_SECURE_SUMMARY" desc="A short summary phrase at the top of the Page Info bubble (which shows when you click the lock icon) that indicates that the connection to the current website is secure.">
@@ -29,7 +28,7 @@
 
   <!-- Internal page summary strings -->
   <!-- Note: IDS_PAGE_INFO_INTERNAL_PAGE would be here, but it is in components_{chromium,google_chrome}_strings.grd because it uses the browser name. -->
-  <message name="IDS_PAGE_INFO_EXTENSION_PAGE" desc="Message to display in the page info bubble when the page you are on is a chrome-extension:// page. This refers to Brave extensions.">
+  <message name="IDS_PAGE_INFO_EXTENSION_PAGE" desc="Message to display in the page info bubble when the page you are on is a chrome-extension:// page. This refers to Chrome extensions.">
     You're viewing an extension page
   </message>
   <message name="IDS_PAGE_INFO_VIEW_SOURCE_PAGE" desc="Message to display in the page info bubble when you are viewing page sources by using |View page source| option from the right click menu.">
@@ -39,10 +38,10 @@
     You're viewing a developer tools page
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE_SECURE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over a secure connection.">
-    Brave simplified this page to make it easier to read. Brave retrieved the original page over a secure connection.
+    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over a secure connection.
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over an insecure connection.">
-    Brave simplified this page to make it easier to read. Brave retrieved the original page over an insecure connection.
+    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over an insecure connection.
   </message>
 
   <!-- Safety Tip summary strings -->
@@ -59,7 +58,7 @@
     Yes, continue
   </message>
   <message name="IDS_PAGE_INFO_SAFETY_TIP_LOOKALIKE_TITLE" desc="Title of Safety Tip infobar on a domain that looks like another domain.">
-    Did you mean <ph name="LOOKALIKE_DOMAIN">$1<ex>google.com</ex></ph>?
+    Did you mean <ph name='LOOKALIKE_DOMAIN'>$1<ex>google.com</ex></ph>?
   </message>
   <message name="IDS_PAGE_INFO_SAFETY_TIP_DESCRIPTION" desc="Body of a warning when the user visits a page that triggered a Safety Tip.">
     Attackers sometimes mimic sites by making hard-to-see changes to the web address.
@@ -89,7 +88,7 @@
     Your information (for example, passwords or credit card numbers) is private when it is sent to this site.
   </message>
   <message name="IDS_PAGE_INFO_SECURE_DETAILS_V2" desc="A short paragraph explaining a secure site to the user.">
-    The site's connection is secure unless Brave tells you otherwise.
+    The site's connection is secure unless Chrome tells you otherwise.
   </message>
   <message name="IDS_PAGE_INFO_ADMIN_PROVIDED_CERT_DETAILS" desc="A short paragraph explaining a site using an administrator-provided certificate to the user.">
     You have accessed content using an administrator-provided certificate. Data you provide to <ph name="DOMAIN">$1<ex>www.google.com</ex></ph> can be intercepted by your administrator.
@@ -123,31 +122,31 @@
     Your password may be compromised
   </message>
   <if expr="_google_chrome">
-    <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. Brave recommends changing your password now.
+    <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website.">
+      You just entered your password on a deceptive site. Chrome recommends changing your password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on one domain.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to check their password on one domain.">
+      You just entered your password on a deceptive site. Chrome recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_2_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on two domains.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_2_DOMAIN" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to check their password on two domains.">
+      You just entered your password on a deceptive site. Chrome recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_3_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on three domains.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_3_DOMAIN" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to check their password on three domains.">
+      You just entered your password on a deceptive site. Chrome recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password now.
     </message>
   </if>
   <if expr="not _google_chrome">
-    <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. Brave recommends changing your password now.
+    <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website.">
+      You just entered your password on a deceptive site. Chromium recommends changing your password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on one domain.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to check their password on one domain.">
+      You just entered your password on a deceptive site. Chromium recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_2_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on two domains.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_2_DOMAIN" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to check their password on two domains.">
+      You just entered your password on a deceptive site. Chromium recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password now.
     </message>
-    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_3_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to check their password on three domains.">
-      You just entered your password on a deceptive site. Brave recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password now.
+    <message name="IDS_PAGE_INFO_CHECK_PASSWORD_DETAILS_SAVED_3_DOMAIN" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to check their password on three domains.">
+      You just entered your password on a deceptive site. Chromium recommends checking your saved passwords for <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password now.
     </message>
   </if>
   <if expr="use_titlecase">
@@ -240,7 +239,7 @@
       <ph name="CITY">$1<ex>Mountain View</ex></ph>, <ph name="COUNTRY">$2<ex>US</ex></ph>
     </message>
     <message name="IDS_PAGE_INFO_SECURITY_TAB_SECURE_IDENTITY_EV_VERIFIED" desc="Describes the legal entity that the current page's HTTPS certificate was issued to. Shown in the certificate area in the Page Info bubble when a HTTPS site with a valid EV certificate is loaded.">
-      Issued to: <ph name="ORGANIZATION">$1<ex>Brave LLC</ex></ph> [<ph name="JURISDICTION">$2<ex>US</ex></ph>]
+      Issued to: <ph name="ORGANIZATION">$1<ex>Google LLC</ex></ph> [<ph name="JURISDICTION">$2<ex>US</ex></ph>]
     </message>
 
     <!-- Certificate Viewer link -->
@@ -281,7 +280,7 @@
     <if expr="is_android">
     <!-- Only used in the dialog shown after tapping "Details" in page info -->
     <message name="IDS_PAGE_INFO_SECURE_IDENTITY_VERIFIED" desc="The text of the identity section when the page is secure and uses a valid certificate">
-      <ph name="BROWSER">$1<ex>Brave</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
+      <ph name="BROWSER">$1<ex>Chromium</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
     </message>
     </if>
 
@@ -478,8 +477,8 @@
     <message name="IDS_PAGE_INFO_STATE_TEXT_NOT_ALLOWED" desc="The Page Info permission subpage and the main page info page contain a label which shows the state of the site permission. This is the text shown if the permission is not allowed (blocked or ask state) by any source (the user, the administrator, etc.).">
       Not allowed
     </message>
-    <message name="IDS_PAGE_INFO_STATE_TEXT_NOT_ALLOWED_IN_INCOGNITO" desc="The Page Info permission subpage and the main page info page contain a label which shows the state of the site permission. This is the text shown if the permission is not allowed in private mode.">
-      Not allowed in Private
+    <message name="IDS_PAGE_INFO_STATE_TEXT_NOT_ALLOWED_IN_INCOGNITO" desc="The Page Info permission subpage and the main page info page contain a label which shows the state of the site permission. This is the text shown if the permission is not allowed in incognito mode.">
+      Not allowed in Incognito
     </message>
     <message name="IDS_PAGE_INFO_STATE_TEXT_NOT_ALLOWED_INSECURE" desc="The Page Info permission subpage and the main page info page contain a label which shows the state of the site permission. This is the text shown if the permission is not allowed in non-secure sites.">
       Not allowed for non-secure sites
@@ -594,7 +593,7 @@
     </message>
 
     <!-- Site settings link -->
-    <message name="IDS_PAGE_INFO_SITE_SETTINGS_LINK" desc="This is the text of the link pointing to Brave's Site Settings page. This appears at the bottom of the Permissions pane of the Page Information Window.">
+    <message name="IDS_PAGE_INFO_SITE_SETTINGS_LINK" desc="This is the text of the link pointing to Chrome's Site Settings page. This appears at the bottom of the Permissions pane of the Page Information Window.">
       Site settings
     </message>
     <message name="IDS_PAGE_INFO_SITE_SETTINGS_TOOLTIP" desc="The text of the tooltip on IDS_PAGE_INFO_SITE_SETTINGS_LINK.">
@@ -620,7 +619,7 @@
     <message name="IDS_PAGE_INFO_PERMISSION_ASK_BY_EXTENSION" desc="The label used underneath a permission listed in the Page Info bubble if the permission was explicitly set to 'Ask' by one of the user's extensions.">
       Setting controlled by an extension
     </message>
-    <message name="IDS_PAGE_INFO_PERMISSION_AUTOMATICALLY_BLOCKED" desc="The label used underneath a permission listed in the Page Info bubble if the permission was blocked by Brave on behalf of the user.">
+    <message name="IDS_PAGE_INFO_PERMISSION_AUTOMATICALLY_BLOCKED" desc="The label used underneath a permission listed in the Page Info bubble if the permission was blocked by Chrome on behalf of the user.">
       Automatically blocked
     </message>
     <message name="IDS_PAGE_INFO_PERMISSION_ADS_SUBTITLE" desc="A subtitle shown under the ‘Ads’ setting indicating that a site has, in the past, shown intrusive or misleading ads. Shown when user clicks/taps the lock/'Danger' icon in the address bar. Used on both desktop and Android platforms" formatter_data="android_java">
@@ -646,54 +645,54 @@
     <!-- Password Protection -->
     <if expr="_google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Brave sync chain. Brave recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Chrome recommends changing your password now. You'll be asked to sign in.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on one domain.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to change their password on one domain.">
+        You just entered your password on a deceptive site. Chrome recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_2_DOMAINS" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on two domains.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_2_DOMAINS" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to change their password on two domains.">
+        You just entered your password on a deceptive site. Chrome recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_3_DOMAINS" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on three domains.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_3_DOMAINS" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website and to change their password on three domains.">
+        You just entered your password on a deceptive site. Chrome recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Brave sync user that they have reused their Brave password on the current website.">
-        Brave can help you protect your Brave sync chain and change your password.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
+        Chrome can help you protect your Google Account and change your password.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Brave password on the current website.">
-        You just entered your password on a deceptive site. Brave can help. To change your password and notify Brave that your account may be at risk, click Protect Account.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
+        You just entered your password on a deceptive site. Chrome can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Brave recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Chrome recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Brave</ex></ph> account or experience identity theft. Brave recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chrome recommends changing your password now.
       </message>
     </if>
     <if expr="not _google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Brave sync chain. Brave recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Chromium recommends changing your password now. You'll be asked to sign in.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on one domain.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_1_DOMAIN" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to change their password on one domain.">
+        You just entered your password on a deceptive site. Chromium recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph> and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_2_DOMAINS" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on two domains.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_2_DOMAINS" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to change their password on two domains.">
+        You just entered your password on a deceptive site. Chromium recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_3_DOMAINS" desc="A short paragraph explaining to a Brave user that they have reused their saved password on the current website and to change their password on three domains.">
-        You just entered your password on a deceptive site. Brave recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password and changing it now.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED_3_DOMAINS" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website and to change their password on three domains.">
+        You just entered your password on a deceptive site. Chromium recommends going to <ph name="WEBSITE_1">$1<ex>www.google.com</ex></ph>, <ph name="WEBSITE_2">$2<ex>www.reddit.com</ex></ph>, <ph name="WEBSITE_3">$3<ex>www.amazon.com</ex></ph>, and other sites where you use this password and changing it now.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Brave sync user that they have reused their Brave password on the current website.">
-        Brave can help you protect your Brave sync chain and change your password.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
+        Chromium can help you protect your Google Account and change your password.
       </message>
-      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Brave password on the current website.">
-        You just entered your password on a deceptive site. Brave can help. To change your password and notify Brave that your account may be at risk, click Protect Account.
+      <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
+        You just entered your password on a deceptive site. Chromium can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Brave recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Chromium recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Brave</ex></ph> account or experience identity theft. Brave recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chromium recommends changing your password now.
       </message>
     </if>
 

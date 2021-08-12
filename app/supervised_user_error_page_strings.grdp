@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--This file is created by l10nUtil.js. Do not edit manually.-->
+<?xml version="1.0" encoding="utf-8"?>
 <grit-part>
       <!-- Supervised User Block Interstitial data -->
       <message name="IDS_BLOCK_INTERSTITIAL_TITLE" desc="A title for the supervised-user block interstitial page.">
@@ -14,14 +13,14 @@
       <message name="IDS_BLOCK_INTERSTITIAL_HEADER_ACCESS_REQUESTS_DISABLED" desc="A heading for the supervised user when they attempt to visit a site that is not permitted by the manager (and they can't ask for permission).">
         You don't have permission to visit this site
       </message>
-      <message name="IDS_BLOCK_INTERSTITIAL_HEADER_NOT_SIGNED_IN" desc="A heading for the supervised user when the status cannot be established because they haven't signed in to Brave).">
-        Please start and sign in to Brave before using this app.
+      <message name="IDS_BLOCK_INTERSTITIAL_HEADER_NOT_SIGNED_IN" desc="A heading for the supervised user when the status cannot be established because they haven't signed in to Chrome).">
+        Please start and sign in to Chrome before using this app.
       </message>
       <message name="IDS_CHILD_BLOCK_INTERSTITIAL_MESSAGE" desc="A message for the child user when they attempt to visit a site that is not permitted by their parent.">
         You need permission to visit this site
       </message>
       <message name="IDS_BLOCK_INTERSTITIAL_MESSAGE_SUPERVISED_USERS_DEPRECATED" desc="Message to be shown to a supervised user directing them to the supervisor.">
-        Questions? Contact the profile who supervises your profile.
+        Questions? Contact the person who supervises your profile.
       </message>
       <message name="IDS_BACK_BUTTON" desc="A button for going back to the last safe url after being blocked.">
         Go back
@@ -80,8 +79,8 @@
       <message name="IDS_SUPERVISED_USER_BLOCK_MESSAGE_MANUAL" desc="Message to be shown to a supervised user when a site is blocked due to a manual blocklist entry">
         Your manager can unblock it for you
       </message>
-      <message name="IDS_SUPERVISED_USER_NOT_SIGNED_IN" desc="Message to be shown to a supervised user who is not signed in to Brave">
-        Please start and sign in to Brave so that Brave can check whether you are allowed to access this site.
+      <message name="IDS_SUPERVISED_USER_NOT_SIGNED_IN" desc="Message to be shown to a supervised user who is not signed in to Chrome">
+        Please start and sign in to Chrome so that Chrome can check whether you are allowed to access this site.
       </message>
 
 </grit-part>

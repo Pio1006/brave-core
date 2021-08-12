@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--This file is created by l10nUtil.js. Do not edit manually.-->
+<?xml version="1.0" encoding="utf-8"?>
 <grit-part>
 
   <if expr="not is_ios">
@@ -25,29 +24,29 @@
   <message name="IDS_AUTOFILL_WARNING_MIXED_FORM" desc="Warning text shown when autofill is disabled due to a form on a secure site being submitted over an insecure connection.">
     This form is not secure. Autofill has been turned off.
   </message>
-  <message name="IDS_AUTOFILL_CREDIT_CARD_SIGNIN_PROMO" desc="Promo text shown alongside credit card suggestions to get profiles to sign in.">
-    To use cards from your Brave sync chain, sign in to Brave
+  <message name="IDS_AUTOFILL_CREDIT_CARD_SIGNIN_PROMO" desc="Promo text shown alongside credit card suggestions to get people to sign in.">
+    To use cards from your Google Account, sign in to Chrome
   </message>
   <if expr="_google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Brave?
+      Remove form suggestion from Chrome?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Brave?
+      Remove credit card from Chrome?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Brave?
+      Remove address from Chrome?
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Brave?
+      Remove form suggestion from Chromium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Brave?
+      Remove credit card from Chromium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Brave?
+      Remove address from Chromium?
     </message>
   </if>
   <message name="IDS_AUTOFILL_CC_AMEX" desc="Full American Express credit card name." formatter_data="android_java">
@@ -65,11 +64,11 @@
   <message name="IDS_AUTOFILL_CC_ELO" desc="Elo credit card name.">
     Elo
   </message>
-  <message name="IDS_AUTOFILL_CC_GOOGLE_ISSUED" desc="Prefix for the Brave Plex card" formatter_data="android_java">
+  <message name="IDS_AUTOFILL_CC_GOOGLE_ISSUED" desc="Prefix for the Google Plex card" formatter_data="android_java">
     Plex
   </message>
-  <message name="IDS_AUTOFILL_CC_GOOGLE_PAY" desc="Brave pay brand name">
-    Brave Pay
+  <message name="IDS_AUTOFILL_CC_GOOGLE_PAY" desc="Google pay brand name">
+    Google Pay
   </message>
   <message name="IDS_AUTOFILL_CC_JCB" desc="JCB credit card name." formatter_data="android_java">
     JCB
@@ -152,7 +151,7 @@
     Manage payment methods...
   </message>
 
-  <message name="IDS_AUTOFILL_MANAGE_PASSWORDS" desc="The text displayed at the bottom of the Autofill popup to allow the user to manage passwords that can be used by Brave Autofill. Imperative. When the user clicks on it, opens the Passwords section of the Settings page." meaning="Manage passwords in the user profile that can be used by Chrome Autofill.">
+  <message name="IDS_AUTOFILL_MANAGE_PASSWORDS" desc="The text displayed at the bottom of the Autofill popup to allow the user to manage passwords that can be used by Chrome Autofill. Imperative. When the user clicks on it, opens the Passwords section of the Settings page." meaning="Manage passwords in the user profile that can be used by Chrome Autofill.">
     Manage passwords...
   </message>
 
@@ -171,8 +170,8 @@
   </message>
   </if>
 
-  <message name="IDS_AUTOFILL_SHOW_ACCOUNT_CARDS" desc="Text shown as an option in the Autofill dropdown. Imperative. When clicked, additional payment cards (e.g., credit/debit cards) that were previously saved in the user's Brave sync chain will be added to the list of suggestions being displayed.">
-    Show cards from your Brave sync chain
+  <message name="IDS_AUTOFILL_SHOW_ACCOUNT_CARDS" desc="Text shown as an option in the Autofill dropdown. Imperative. When clicked, additional payment cards (e.g., credit/debit cards) that were previously saved in the user's Google Account will be added to the list of suggestions being displayed.">
+    Show cards from your Google Account
   </message>
 
   <if expr="not is_android">
@@ -287,13 +286,13 @@
   <!-- Autofill/Wallet integration preferences -->
   <if expr="not is_ios">
     <then>
-      <message name="IDS_AUTOFILL_ENABLE_PAYMENTS_INTEGRATION_CHECKBOX_LABEL" desc="Label for the checkbox that controls the Autofill/Payments integration feature used for Autofill Home. 'Brave Pay' should not be translated as it is the product name. Sentence-Cased.">
-        Payment methods and addresses using Brave Pay
+      <message name="IDS_AUTOFILL_ENABLE_PAYMENTS_INTEGRATION_CHECKBOX_LABEL" desc="Label for the checkbox that controls the Autofill/Payments integration feature used for Autofill Home. 'Google Pay' should not be translated as it is the product name. Sentence-Cased.">
+        Payment methods and addresses using Google Pay
       </message>
     </then>
     <else>
-      <message name="IDS_AUTOFILL_ENABLE_PAYMENTS_INTEGRATION_CHECKBOX_LABEL" desc="Label for the checkbox that controls the Autofill/Payments integration feature used for Autofill Home. 'Brave Pay' should not be translated as it is the product name. Title-Cased.">
-        Payment Methods and Addresses Using Brave Pay
+      <message name="IDS_AUTOFILL_ENABLE_PAYMENTS_INTEGRATION_CHECKBOX_LABEL" desc="Label for the checkbox that controls the Autofill/Payments integration feature used for Autofill Home. 'Google Pay' should not be translated as it is the product name. Title-Cased.">
+        Payment Methods and Addresses Using Google Pay
       </message>
     </else>
   </if>
