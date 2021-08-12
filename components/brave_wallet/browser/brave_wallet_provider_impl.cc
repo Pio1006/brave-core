@@ -65,9 +65,10 @@ void BraveWalletProviderImpl::Enable(EnableCallback callback) {
 }
 
 void BraveWalletProviderImpl::OnChainAddedResult(
-    EnableCallback callback,
-    const std::vector<std::string>& accounts) {
-  std::move(callback).Run(accounts);
+    RequestCallback callback,
+                const std::vector<std::string>& accounts) {
+  base::flat_map<std::string, std::string> headers;
+  std::move(callback).Run(200, "", headers);
 }
 
 void BraveWalletProviderImpl::OnEnable(
